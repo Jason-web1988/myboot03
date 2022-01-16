@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.myboot02'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.1'
+	//추가
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'	//톰캣 사용을 위해
+    implementation 'javax.servlet:jstl:1.2'						//JSP 사용을 우히ㅐ
+	implementation fileTree(dir: 'libs', include: ['*.jar'])		//프로젝트 루트 디렉터리의 libs디렉토리의 jar파일 읽어들이기
+    implementation files('libs/ojdbc6.jar')							//오라클 드라이버를 로컬 리포지토리에 추가
+    
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
