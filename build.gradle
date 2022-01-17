@@ -21,6 +21,7 @@ dependencies {
     implementation 'javax.servlet:jstl:1.2'						//JSP 사용을 우히ㅐ
 	implementation fileTree(dir: 'libs', include: ['*.jar'])		//프로젝트 루트 디렉터리의 libs디렉토리의 jar파일 읽어들이기
     implementation files('libs/ojdbc6.jar')							//오라클 드라이버를 로컬 리포지토리에 추가
+    implementation 'org.apache.tiles:tiles-jsp:3.0.4'
     
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
